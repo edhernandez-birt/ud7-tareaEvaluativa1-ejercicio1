@@ -1,4 +1,4 @@
-package eus.birt.dam.app;
+package eus.birt.dam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

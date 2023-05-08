@@ -53,6 +53,11 @@ public class Comentario implements Serializable {
 	public String getNoticiaTitulo() {
 	    return noticia != null ? noticia.getTitulo() : null;
 	}
+	//Lo mismo para usuario
+	@JsonProperty("usuarioEmail")
+	public String getUsuarioEmail() {
+	    return usuario != null ? usuario.getEmail() : null;
+	}
 
 	public Comentario(String texto,Noticia noticia,Usuario usuario) {
 		super();

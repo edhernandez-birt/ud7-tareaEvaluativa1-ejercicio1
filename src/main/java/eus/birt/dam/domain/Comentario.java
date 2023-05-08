@@ -38,12 +38,12 @@ public class Comentario implements Serializable {
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private LocalDate fechaComentario = LocalDate.now();
 	
-	@JsonBackReference
+	@JsonBackReference (value="noticia-comentarios")
 	@ManyToOne
 	@JoinColumn (name = "noticia_id")
 	private Noticia noticia;
 	
-	@JsonBackReference
+	@JsonBackReference (value="usuario-comentarios")
 	@ManyToOne
 	@JoinColumn (name = "usuario_id")
 	private Usuario usuario;
@@ -54,8 +54,11 @@ public class Comentario implements Serializable {
 	    return noticia != null ? noticia.getTitulo() : null;
 	}
 
-	public Comentario(String texto) {
+	public Comentario(String texto,Noticia noticia,Usuario usuario) {
 		super();
 		this.texto = texto;
+		this.noticia = noticia;
+		this.usuario = usuario;
+		//this.fechaComentario = LocalDate.now();
 	}
 }

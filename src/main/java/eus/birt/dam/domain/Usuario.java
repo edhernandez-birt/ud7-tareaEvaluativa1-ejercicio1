@@ -42,7 +42,7 @@ public class Usuario implements Serializable {
 	
 	private String email;
 
-	@JsonManagedReference
+	//@JsonManagedReference (value="comentarios-usuario")
 	@OneToMany (mappedBy = "usuario",cascade = CascadeType.ALL)
 	List <Comentario> comentarios = new ArrayList<>();
 

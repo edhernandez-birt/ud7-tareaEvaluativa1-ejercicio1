@@ -46,14 +46,16 @@ public class Noticia implements Serializable{
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private LocalDate fechaNoticia = LocalDate.now();
 	
-	@JsonManagedReference
+	//https://es.stackoverflow.com/questions/495994/415-unsupported-media-type-java-springboot-entidades-con-listas-de-entidades
+	//@JsonManagedReference (value="comentarios-noticia")
 	@OneToMany (mappedBy = "noticia",cascade = CascadeType.ALL)
 	List <Comentario> comentarios = new ArrayList<>();
 
-	public Noticia(String titulo, String texto) {
+	public Noticia(String titulo, String texto, LocalDate fecha) {
 		super();
 		this.titulo = titulo;
 		this.texto = texto;
+		this.fechaNoticia = fecha;
 	}
 
 }

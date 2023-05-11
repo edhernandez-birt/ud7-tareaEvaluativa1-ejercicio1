@@ -64,6 +64,5 @@ public class Comentario implements Serializable {
 		this.texto = texto;
 		this.noticia = noticia;
 		this.usuario = usuario;
-		//this.fechaComentario = LocalDate.now();
 	}
 }
